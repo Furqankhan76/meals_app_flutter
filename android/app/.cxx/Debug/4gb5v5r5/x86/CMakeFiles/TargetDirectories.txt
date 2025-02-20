@@ -1,0 +1,2 @@
+/home/furqan/Desktop/meals_app/android/app/.cxx/Debug/4gb5v5r5/x86/CMakeFiles/edit_cache.dir
+/home/furqan/Desktop/meals_app/android/app/.cxx/Debug/4gb5v5r5/x86/CMakeFiles/rebuild_cache.dir
