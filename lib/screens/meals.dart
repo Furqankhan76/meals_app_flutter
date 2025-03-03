@@ -6,25 +6,21 @@ import 'package:meals_app/widgets/meal_item.dart';
 class MealsScreen extends StatelessWidget {
   const MealsScreen({
     super.key,
-    required this.meals,
     this.title,
-        required this.onToggleFavorite,
-
+    required this.meals,
   });
 
   final String? title;
   final List<Meal> meals;
-  final void Function(Meal meal) onToggleFavorite;
 
-  void selectMeal(
-    BuildContext context,
-    Meal meal,
-  ) {
-    Navigator.of(context).push(MaterialPageRoute(
+  void selectMeal(BuildContext context, Meal meal) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
         builder: (ctx) => MealDetailsScreen(
-              meal: meal,
-              onToggleFavorite: onToggleFavorite,
-            )));
+          meal: meal,
+        ),
+      ),
+    );
   }
 
   @override
@@ -33,19 +29,19 @@ class MealsScreen extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text('Uh oh ... nothing here!',
-              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                    color: Theme.of(context).colorScheme.onSurface,
-                  )),
-          SizedBox(
-            height: 16,
+          Text(
+            'Uh oh ... nothing here!',
+            style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
           ),
+          const SizedBox(height: 16),
           Text(
             'Try selecting a different category!',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
                 ),
-          )
+          ),
         ],
       ),
     );
@@ -67,9 +63,10 @@ class MealsScreen extends StatelessWidget {
     }
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(title!),
-        ),
-        body: content);
+      appBar: AppBar(
+        title: Text(title!),
+      ),
+      body: content,
+    );
   }
 }
